@@ -5,6 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Accueil — Analyse de l'État 4001</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 40px 0;
+    }
+    .button-link {
+      display: inline-block;
+      padding: 16px 28px;
+      margin: 0;
+      background: #1764c6;
+      color: #fff !important;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1.1em;
+      font-weight: 600;
+      box-shadow: 0 2px 8px #0001;
+      transition: background 0.2s, transform 0.1s;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+    .button-link:hover, .button-link:focus {
+      background: #0b3d91;
+      transform: translateY(-2px) scale(1.03);
+      color: #fff;
+    }
+    @media (max-width:600px) {
+      .button-grid {
+        flex-direction: column;
+        gap: 14px;
+      }
+      .button-link {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -18,23 +56,24 @@
         <a href="limites.html">Outil limité</a>
         <a href="depasse.html">Outil dépassé</a>
         <a href="ssmsi.html">SSMSI</a>
-        <a href="table-index.html">Tableau des index</a>
+        <a href="table-index.html">Table des index</a>
       </nav>
     </div>
   </header>
-<main class="container">
-  <h2>Accueil</h2>
-  <p>Ce site présente une analyse académique de la base de données “État 4001” portant sur les faits de délinquance.</p>
-  <div class="button-grid">
-    <a href="histoire.html" class="button">Histoire de la base de données</a>
-    <a href="construction.html" class="button">Construction de la base</a>
-    <a href="observatoire.html" class="button">Observatoire & Utilisation</a>
-    <a href="limites.html" class="button">Outil limité</a>
-    <a href="depasse.html" class="button">Outil dépassé</a>
-    <a href="ssmsi.html" class="button">Lien avec le SSMSI</a>
-    <a href="table-index.html" class="button">Table des indices</a>
-  </div>
-</main>
+  <main class="container">
+    <h2>Bienvenue</h2>
+    <p>Ce site présente une analyse académique de la base de données “État 4001” portant sur les faits de délinquance.<br>
+    Choisissez une rubrique :</p>
+    <div class="button-grid">
+      <a href="histoire.html" class="button-link">Histoire de la base de données</a>
+      <a href="construction.html" class="button-link">Construction de la base</a>
+      <a href="observatoire.html" class="button-link">Observatoire & Utilisation</a>
+      <a href="limites.html" class="button-link">Outil limité</a>
+      <a href="depasse.html" class="button-link">Outil dépassé</a>
+      <a href="ssmsi.html" class="button-link">Lien avec le SSMSI</a>
+      <a href="table-index.html" class="button-link">Table des indices</a>
+    </div>
+  </main>
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025 — Projet académique. Équipe de rendu.</p>
