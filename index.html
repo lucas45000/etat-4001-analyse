@@ -6,40 +6,47 @@
   <title>Accueil — Analyse de l'État 4001</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .button-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin: 40px 0;
+    .section-index {
+      background: #fafdff;
+      border-radius: 12px;
+      padding: 28px 22px 18px 22px;
+      margin: 32px 0 0 0;
+      box-shadow: 0 2px 16px #1764c608;
+    }
+    .section-index h3 {
+      margin-top: 0;
+      color: #1764c6;
+      font-size: 1.25em;
+    }
+    .btn-center {
+      text-align: right;
+      margin-top: 13px;
     }
     .button-link {
       display: inline-block;
-      padding: 16px 28px;
-      margin: 0;
+      padding: 13px 26px;
       background: #1764c6;
       color: #fff !important;
       text-decoration: none;
       border-radius: 6px;
-      font-size: 1.1em;
+      font-size: 1.04em;
       font-weight: 600;
       box-shadow: 0 2px 8px #0001;
-      transition: background 0.2s, transform 0.1s;
+      transition: background 0.19s, transform 0.08s;
       border: none;
       cursor: pointer;
-      text-align: center;
     }
     .button-link:hover, .button-link:focus {
       background: #0b3d91;
-      transform: translateY(-2px) scale(1.03);
+      transform: translateY(-2px) scale(1.04);
       color: #fff;
     }
-    @media (max-width:600px) {
-      .button-grid {
-        flex-direction: column;
-        gap: 14px;
+    @media (max-width:700px) {
+      .section-index {
+        padding: 20px 8px 10px 8px;
       }
-      .button-link {
-        width: 100%;
+      .btn-center {
+        text-align: center;
       }
     }
   </style>
@@ -62,17 +69,63 @@
   </header>
   <main class="container">
     <h2>Bienvenue</h2>
-    <p>Ce site présente une analyse académique de la base de données “État 4001” portant sur les faits de délinquance.<br>
-    Choisissez une rubrique :</p>
-    <div class="button-grid">
-      <a href="histoire.html" class="button-link">Histoire de la base de données</a>
-      <a href="construction.html" class="button-link">Construction de la base</a>
-      <a href="observatoire.html" class="button-link">Observatoire & Utilisation</a>
-      <a href="limites.html" class="button-link">Outil limité</a>
-      <a href="depasse.html" class="button-link">Outil dépassé</a>
-      <a href="ssmsi.html" class="button-link">Lien avec le SSMSI</a>
-      <a href="table-index.html" class="button-link">Table des indices</a>
-    </div>
+    <p>Ce site présente une analyse académique de la base de données “État 4001” portant sur les faits de délinquance. Explorez chaque rubrique ci-dessous :</p>
+
+    <section class="section-index">
+      <h3>Histoire de la base de données</h3>
+      <p>Décrivez ici les origines, les évolutions et les contextes de création de la base État 4001. Exemples : date de création, cadre institutionnel, grands jalons.</p>
+      <div class="btn-center">
+        <a href="histoire.html" class="button-link">Accéder à la rubrique</a>
+      </div>
+    </section>
+
+    <section class="section-index">
+      <h3>Construction de la base</h3>
+      <p>Décrivez la structure de la base : quelles sont les variables, la méthode de collecte, les sources de données, la chaîne de traitement, les formats utilisés, etc.</p>
+      <div class="btn-center">
+        <a href="construction.html" class="button-link">Accéder à la rubrique</a>
+      </div>
+    </section>
+
+    <section class="section-index">
+      <h3>Observatoire & utilisation</h3>
+      <p>Expliquez l’implication de l’Observatoire de la délinquance et de la réponse pénale, la façon dont il utilise l’État 4001, l’intérêt statistique ou scientifique.</p>
+      <div class="btn-center">
+        <a href="observatoire.html" class="button-link">Accéder à la rubrique</a>
+      </div>
+    </section>
+
+    <section class="section-index">
+      <h3>État 4001 : un outil limité</h3>
+      <p>Présentez les limites connues de la base (biais, manque ou retard de données, limitations techniques ou de couverture, etc.).</p>
+      <div class="btn-center">
+        <a href="limites.html" class="button-link">Accéder à la rubrique</a>
+      </div>
+    </section>
+
+    <section class="section-index">
+      <h3>État 4001 : un outil dépassé</h3>
+      <p>Argumentez sur l’obsolescence éventuelle de la base : évolutions technologiques manquées, besoins non couverts, absence d’interopérabilité.</p>
+      <div class="btn-center">
+        <a href="depasse.html" class="button-link">Accéder à la rubrique</a>
+      </div>
+    </section>
+
+    <section class="section-index">
+      <h3>L’État 4001 et le SSMSI</h3>
+      <p>Décrivez le lien avec le Service Statistique Ministériel de la Sécurité Intérieure (SSMSI), complémentarité, évolution, transformation ou perspective de fusion, etc.</p>
+      <div class="btn-center">
+        <a href="ssmsi.html" class="button-link">Accéder à la rubrique</a>
+      </div>
+    </section>
+
+    <section class="section-index">
+      <h3>Table des indices</h3>
+      <p>Retrouvez la table complète des index et libellés d'infractions utilisés dans “État 4001”.</p>
+      <div class="btn-center">
+        <a href="table-index.html" class="button-link">Accéder au tableau</a>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <div class="container">
