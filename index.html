@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Accueil — Analyse de l'État 4001</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- 🌍 Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-sA+e2Qj+G0F3bQWZtYtF0ljL7ZxFD8TKzGT6Jf0OQH0="
+    crossorigin=""
+  />
+
   <style>
     .section-index {
       background: #fafdff;
@@ -49,6 +58,11 @@
         text-align: center;
       }
     }
+    #map {
+      height: 600px;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
   </style>
 </head>
 <body>
@@ -71,6 +85,12 @@
     <h2>Bienvenue</h2>
     <p>Ce site présente une analyse académique de la base de données “État 4001” portant sur les faits de délinquance. Explorez chaque rubrique ci-dessous :</p>
 
+    <!-- 🗺️ Carte interactive -->
+    <section class="section-index">
+      <h3>Carte interactive — Taux de vols (pour 1 000 habitants, 2023)</h3>
+      <div id="map"></div>
+    </section>
+
     <section class="section-index">
       <h3>Histoire de la base de données</h3>
       <p>Décrivez ici les origines, les évolutions et les contextes de création de la base État 4001. Exemples : date de création, cadre institutionnel, grands jalons.</p>
@@ -81,7 +101,7 @@
 
     <section class="section-index">
       <h3>Construction de la base</h3>
-      <p>Décrivez la structure de la base : quelles sont les variables, la méthode de collecte, les sources de données, la chaîne de traitement, les formats utilisés, etc.</p>
+      <p>Décrivez la structure de la base : quelles sont les variables, la méthode de collecte, les sources de données, la chaîne de traitement, les formats utilisés, etc.</p>
       <div class="btn-center">
         <a href="construction.html" class="button-link">Accéder à la rubrique</a>
       </div>
@@ -96,7 +116,7 @@
     </section>
 
     <section class="section-index">
-      <h3>État 4001 : un outil limité</h3>
+      <h3>État 4001 : un outil limité</h3>
       <p>Présentez les limites connues de la base (biais, manque ou retard de données, limitations techniques ou de couverture, etc.).</p>
       <div class="btn-center">
         <a href="limites.html" class="button-link">Accéder à la rubrique</a>
@@ -104,7 +124,7 @@
     </section>
 
     <section class="section-index">
-      <h3>État 4001 : un outil dépassé</h3>
+      <h3>État 4001 : un outil dépassé</h3>
       <p>Argumentez sur l’obsolescence éventuelle de la base : évolutions technologiques manquées, besoins non couverts, absence d’interopérabilité.</p>
       <div class="btn-center">
         <a href="depasse.html" class="button-link">Accéder à la rubrique</a>
@@ -132,5 +152,85 @@
       <p>&copy; 2025 — Projet académique. Équipe de rendu.</p>
     </div>
   </footer>
+
+  <!-- 🌍 Leaflet JS + PapaParse -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-o9N1j7kBntEPEu8j3f5ykZ1wI8zFDoXJgIk1JtGmNNM="
+    crossorigin=""
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <script>
+    // Initialisation de la carte Leaflet
+    var map = L.map('map').setView([46.8, 2.5], 6);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+      maxZoom: 12,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    // Charger les départements
+    fetch('https://france-geojson.gregoiredavid.fr/repo/departements.geojson')
+      .then(res => res.json())
+      .then(geojson => {
+        Papa.parse('donnee-dep-data.gouv-2024-geographie2025-produit-le2025-06-04.csv', {
+          download: true,
+          header: true,
+          complete: function(results) {
+            const data = results.data;
+            const vols = {};
+
+            // Filtrer les données : uniquement 2023 et indicateurs contenant "vol"
+            data.forEach(row => {
+              const annee = parseInt(row.annee);
+              const indic = (row.indicateur || '').toLowerCase();
+              if (annee === 2023 && indic.includes('vol')) {
+                const code = row['Code_departement'].padStart(2, '0');
+                const taux = parseFloat(row.taux_pour_mille.replace(',', '.'));
+                vols[code] = taux;
+              }
+            });
+
+            // Définir la couleur selon le taux
+            function getColor(d) {
+              return d > 20 ? '#800026' :
+                     d > 15 ? '#BD0026' :
+                     d > 10 ? '#E31A1C' :
+                     d > 5  ? '#FC4E2A' :
+                     d > 2  ? '#FD8D3C' :
+                     d > 1  ? '#FEB24C' :
+                     d > 0  ? '#FED976' :
+                              '#FFEDA0';
+            }
+
+            function style(feature) {
+              const code = feature.properties.code;
+              const taux = vols[code] || 0;
+              return {
+                fillColor: getColor(taux),
+                weight: 1,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.75
+              };
+            }
+
+            // Ajouter les départements à la carte
+            L.geoJson(geojson, {
+              style: style,
+              onEachFeature: function(feature, layer) {
+                const code = feature.properties.code;
+                const taux = vols[code] ? vols[code].toFixed(2) : 'N/A';
+                layer.bindPopup(
+                  `<strong>${feature.properties.nom}</strong><br>Taux de vols (2023) : ${taux} / 1 000 hab.`
+                );
+              }
+            }).addTo(map);
+          }
+        });
+      });
+  </script>
 </body>
 </html>
