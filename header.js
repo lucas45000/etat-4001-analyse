@@ -8,9 +8,9 @@ let lastScrollTop = 0;
 window.addEventListener('scroll', () => {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-  if (scrollTop > lastScrollTop && scrollTop > 100) {
-    header.classList.add('hidden');
-    menuBubble.classList.add('visible'); // Affiche la bulle
+if ((scrollTop > lastScrollTop && scrollTop > 25) || window.innerWidth < 700) {
+  header.classList.add('hidden');
+  menuBubble.classList.add('visible');
   } else {
     header.classList.remove('hidden');
     menuBubble.classList.remove('visible'); // Cache la bulle
