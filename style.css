@@ -240,6 +240,45 @@ p {
   background: #f0f4ff;
 }
 
+/* --- ENCARDS / NOTES / ALERTES --- */
+.note, .info, .warning, .tip {
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin: 18px 0;
+  max-width: 850px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  line-height: 1.5;
+}
+
+/* Note simple */
+.note {
+  background: #f0f8ff; /* bleu clair */
+  color: #1764c6;
+  border-left: 4px solid #1764c6;
+}
+
+/* Info supplémentaire */
+.info {
+  background: #e6f7ff; /* bleu très clair */
+  color: #0b3d91;
+  border-left: 4px solid #0b3d91;
+}
+
+/* Alerte / attention */
+.warning {
+  background: #fff4e5; /* orange clair */
+  color: #d46a0a;
+  border-left: 4px solid #d46a0a;
+}
+
+/* Astuce / tip */
+.tip {
+  background: #f6ffed; /* vert clair */
+  color: #237804;
+  border-left: 4px solid #237804;
+}
+
+
 .menu-dropdown.show {
   display: flex;
 }
