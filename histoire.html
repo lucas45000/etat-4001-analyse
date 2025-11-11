@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- HEADER CENTRALISÉ -->
+
+  <!-- HEADER FIXE DYNAMIQUE -->
   <header class="site-header" id="header">
     <div class="container">
       <h1>Analyse de l'État 4001</h1>
@@ -19,8 +20,23 @@
         <a href="limites.html">Outil limité</a>
         <a href="depasse.html">Outil dépassé</a>
         <a href="ssmsi.html">SSMSI</a>
-        <a href="table-index.html">Tableau des index</a>
+        <a href="table-index.html">Table des index</a>
       </nav>
+    </div>
+
+    <!-- BOUTON MENU FLOTANT -->
+    <div class="menu-bubble" id="menuBubble">☰</div>
+
+    <!-- MENU DEROULANT -->
+    <div class="menu-dropdown" id="menuDropdown">
+      <a href="index.html">Accueil</a>
+      <a href="histoire.html">Histoire</a>
+      <a href="construction.html">Construction</a>
+      <a href="observatoire.html">Observatoire</a>
+      <a href="limites.html">Outil limité</a>
+      <a href="depasse.html">Outil dépassé</a>
+      <a href="ssmsi.html">SSMSI</a>
+      <a href="table-index.html">Table des index</a>
     </div>
   </header>
 
@@ -79,7 +95,7 @@
     </div>
   </footer>
 
-  <!-- Script centralisé pour le header dynamique -->
+  <!-- Script header dynamique + bulle menu -->
   <script src="header.js"></script>
 </body>
 </html>
