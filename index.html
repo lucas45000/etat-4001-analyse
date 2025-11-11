@@ -6,12 +6,12 @@
   <title>Accueil — Analyse de l'État 4001</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <!-- HEADER CENTRALISÉ -->
+
+  <!-- HEADER DYNAMIQUE -->
   <header class="site-header" id="header">
     <div class="container">
-      <h1>Analyse de l'État 4001</h1>
+      <h1>📊 Analyse de l'État 4001</h1>
       <nav>
         <a href="index.html" class="active">Accueil</a>
         <a href="histoire.html">Histoire</a>
@@ -27,11 +27,11 @@
 
   <main class="container">
     <h2>Bienvenue</h2>
-    <p>Ce site présente une analyse académique de la base de données “État 4001” portant sur les faits de délinquance. Explorez chaque rubrique ci-dessous :</p>
+    <p>Ce site présente une analyse académique de la base de données “État 4001”. Explorez chaque rubrique :</p>
 
     <section class="section-index">
       <h3>Histoire de la base de données</h3>
-      <p>Décrivez ici les origines, les évolutions et les contextes de création de la base État 4001. Exemples : date de création, cadre institutionnel, grands jalons.</p>
+      <p>Origines, évolutions et contextes de création de la base État 4001.</p>
       <div class="btn-center">
         <a href="histoire.html" class="button-link">Accéder à la rubrique</a>
       </div>
@@ -39,7 +39,7 @@
 
     <section class="section-index">
       <h3>Construction de la base</h3>
-      <p>Décrivez la structure de la base : quelles sont les variables, la méthode de collecte, les sources de données, la chaîne de traitement, les formats utilisés, etc.</p>
+      <p>Structure de la base : variables, collecte, sources, traitement, formats.</p>
       <div class="btn-center">
         <a href="construction.html" class="button-link">Accéder à la rubrique</a>
       </div>
@@ -47,7 +47,7 @@
 
     <section class="section-index">
       <h3>Observatoire & utilisation</h3>
-      <p>Expliquez l’implication de l’Observatoire de la délinquance et de la réponse pénale, la façon dont il utilise l’État 4001, l’intérêt statistique ou scientifique.</p>
+      <p>L’implication de l’Observatoire et l’utilisation de l’État 4001.</p>
       <div class="btn-center">
         <a href="observatoire.html" class="button-link">Accéder à la rubrique</a>
       </div>
@@ -55,7 +55,7 @@
 
     <section class="section-index">
       <h3>État 4001 : un outil limité</h3>
-      <p>Présentez les limites connues de la base (biais, manque ou retard de données, limitations techniques ou de couverture, etc.).</p>
+      <p>Limites de la base : biais, retard, couverture, technique.</p>
       <div class="btn-center">
         <a href="limites.html" class="button-link">Accéder à la rubrique</a>
       </div>
@@ -63,7 +63,7 @@
 
     <section class="section-index">
       <h3>État 4001 : un outil dépassé</h3>
-      <p>Argumentez sur l’obsolescence éventuelle de la base : évolutions technologiques manquées, besoins non couverts, absence d’interopérabilité.</p>
+      <p>Obsolescence éventuelle : technologies manquées, besoins non couverts.</p>
       <div class="btn-center">
         <a href="depasse.html" class="button-link">Accéder à la rubrique</a>
       </div>
@@ -71,7 +71,7 @@
 
     <section class="section-index">
       <h3>L’État 4001 et le SSMSI</h3>
-      <p>Décrivez le lien avec le Service Statistique Ministériel de la Sécurité Intérieure (SSMSI), complémentarité, évolution, transformation ou perspective de fusion, etc.</p>
+      <p>Lien avec le Service Statistique Ministériel de la Sécurité Intérieure.</p>
       <div class="btn-center">
         <a href="ssmsi.html" class="button-link">Accéder à la rubrique</a>
       </div>
@@ -79,7 +79,7 @@
 
     <section class="section-index">
       <h3>Table des indices</h3>
-      <p>Retrouvez la table complète des index et libellés d'infractions utilisés dans “État 4001”.</p>
+      <p>Table complète des index et libellés d'infractions.</p>
       <div class="btn-center">
         <a href="table-index.html" class="button-link">Accéder au tableau</a>
       </div>
@@ -92,7 +92,20 @@
     </div>
   </footer>
 
-  <!-- Script centralisé pour le header dynamique -->
-  <script src="header.js"></script>
+  <script>
+    // HEADER DYNAMIQUE
+    let lastScrollTop = 0;
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        header.classList.add('hidden');
+      } else {
+        header.classList.remove('hidden');
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+  </script>
+
 </body>
 </html>
