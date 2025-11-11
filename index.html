@@ -7,22 +7,31 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* --- STYLE BANNIÈRE MODERNE --- */
+    /* --- HEADER DYNAMIQUE AVEC FONDU --- */
     .site-header {
       background: linear-gradient(100deg, #0b3d91, #1764c6);
       color: #fff;
       padding: 20px 0;
       box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(8px);
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: transform 0.4s ease, opacity 0.4s ease, background 0.3s ease;
+      opacity: 1;
     }
+    .site-header.hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
     .site-header .container {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
+      padding: 0 24px;
     }
     .site-header h1 {
       margin: 0;
@@ -55,30 +64,19 @@
       background: rgba(255, 255, 255, 0.18);
       transform: translateY(-2px);
     }
-    @media (max-width: 750px) {
-      .site-header h1 {
-        font-size: 1.4em;
-        margin-bottom: 10px;
-      }
-      nav {
-        justify-content: center;
-        width: 100%;
-        gap: 10px;
-      }
-      nav a {
-        background: rgba(255,255,255,0.12);
-        font-size: 0.9em;
-      }
-    }
 
-    /* --- STYLE DU CORPS --- */
+    /* --- ESPACEMENT POUR LE HEADER FIXE --- */
     body {
       font-family: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
       margin: 0;
       color: #111;
       background: #ffffff;
       line-height: 1.6;
+      padding-top: 80px; /* évite que le contenu passe sous le header */
+      scroll-behavior: smooth;
     }
+
+    /* --- BLOC D’ACCUEIL --- */
     .container {
       max-width: 1000px;
       margin: 0 auto;
@@ -92,8 +90,6 @@
     p {
       max-width: 850px;
     }
-
-    /* --- STYLE DES BLOCS D’ACCUEIL --- */
     .section-index {
       background: #fafdff;
       border-radius: 12px;
@@ -136,6 +132,19 @@
       color: #fff;
     }
     @media (max-width:700px) {
+      .site-header h1 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+      }
+      nav {
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+      }
+      nav a {
+        background: rgba(255,255,255,0.12);
+        font-size: 0.9em;
+      }
       .section-index {
         padding: 20px 8px 10px 8px;
       }
@@ -144,7 +153,6 @@
       }
     }
 
-    /* --- PIED DE PAGE --- */
     .site-footer {
       background: #f5f7fb;
       color: #666;
@@ -157,7 +165,7 @@
 </head>
 
 <body>
-  <header class="site-header">
+  <header class="site-header" id="header">
     <div class="container">
       <h1>Analyse de l'État 4001</h1>
       <nav>
@@ -239,5 +247,21 @@
       <p>&copy; 2025 — Projet académique. Équipe de rendu.</p>
     </div>
   </footer>
+
+  <!-- --- SCRIPT : MENU DÉROULANT AVEC FONDU --- -->
+  <script>
+    let lastScrollTop = 0;
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        header.classList.add('hidden'); // cache avec fondu
+      } else {
+        header.classList.remove('hidden'); // réaffiche avec fondu
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+  </script>
 </body>
 </html>
