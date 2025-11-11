@@ -314,8 +314,8 @@ p {
 /* --- BOUTON MENU FLOTANT --- */
 .menu-bubble {
   position: fixed;
-  bottom: 20px;   /* en bas à droite */
-  right: 20px;
+  top: 16px;
+  left: 16px;
   width: 60px;
   height: 60px;
   background: var(--accent);
@@ -324,48 +324,67 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2em;
+  font-size: 1.8em;
   cursor: pointer;
-  z-index: 1100;
+  z-index: 1200;
   box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-  transition: transform 0.3s, opacity 0.3s;
-  opacity: 1;       /* visible par défaut */
+  transition: opacity 0.3s, transform 0.3s, background 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-bubble:hover {
+  transform: scale(1.08);
+  background: #0b3d91;
+}
+
+.menu-bubble.visible {
+  opacity: 1;
   pointer-events: auto;
 }
 
-/* effet au survol */
-.menu-bubble:hover {
-  transform: scale(1.1);
-}
-
-/* --- MENU DEROULANT --- */
+/* --- CONTENU DU MENU DEROULANT --- */
 .menu-dropdown {
   position: fixed;
-  bottom: 90px; /* juste au-dessus de la bulle */
-  right: 20px;
-  background: #fff;
+  top: 80px; /* légèrement en dessous de la bulle */
+  left: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px); /* effet flou derrière le menu */
   border-radius: 12px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
   display: none;
   flex-direction: column;
   overflow: hidden;
-  z-index: 1100;
+  z-index: 1190;
+  min-width: 220px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.menu-dropdown.show {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .menu-dropdown a {
-  padding: 12px 20px;
+  padding: 14px 20px;
   text-decoration: none;
   color: #1764c6;
-  font-weight: 500;
-  transition: background 0.2s;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.15s, color 0.2s;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.menu-dropdown a:last-child {
+  border-bottom: none;
 }
 
 .menu-dropdown a:hover {
-  background: #f0f4ff;
-}
-
-/* affiche le menu quand show est ajouté */
-.menu-dropdown.show {
-  display: flex;
+  background: var(--accent);
+  color: #fff;
+  transform: translateX(4px);
+  border-radius: 6px;
 }
 
