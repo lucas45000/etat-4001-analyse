@@ -5,140 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Accueil — Analyse de l'État 4001</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* --- HEADER FIXE DYNAMIQUE --- */
-    :root {
-      --header-height: 80px; /* hauteur par défaut */
-    }
-
-    .site-header {
-      background: linear-gradient(100deg, #0b3d91, #1764c6);
-      color: #fff;
-      padding: 20px 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-      transition: transform 0.4s ease, opacity 0.4s ease, background 0.3s ease;
-      opacity: 1;
-    }
-    .site-header.hidden {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-
-    .site-header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      padding: 0 24px;
-    }
-    .site-header h1 {
-      margin: 0;
-      font-size: 1.8em;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-    .site-header h1::before { content: "📊 "; font-size: 1em; }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: flex-end;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-weight: 500;
-      font-size: 0.96em;
-      transition: background 0.2s, transform 0.15s;
-    }
-    nav a:hover,
-    nav a:focus,
-    nav a.active {
-      background: rgba(255,255,255,0.18);
-      transform: translateY(-2px);
-    }
-
-    /* --- ESPACEMENT POUR LE HEADER FIXE --- */
-    body {
-      font-family: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-      margin: 0;
-      color: #111;
-      background: #fff;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      padding-top: var(--header-height); /* espace égal à la hauteur du header */
-    }
-
-    /* --- BLOC D’ACCUEIL ET SECTIONS --- */
-    .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
-    h2 { color: #1764c6; font-size: 1.6em; margin-bottom: 12px; }
-    p { max-width: 850px; }
-
-    .section-index {
-      background: #fafdff;
-      border-radius: 12px;
-      padding: 28px 22px 18px 22px;
-      margin: 32px 0 0 0;
-      box-shadow: 0 2px 16px #1764c608;
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-    .section-index:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 20px #1764c615;
-    }
-    .section-index h3 { margin-top: 0; color: #1764c6; font-size: 1.25em; }
-
-    .btn-center { text-align: right; margin-top: 13px; }
-    .button-link {
-      display: inline-block;
-      padding: 13px 26px;
-      background: #1764c6;
-      color: #fff !important;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 1.04em;
-      font-weight: 600;
-      box-shadow: 0 2px 8px #0001;
-      transition: background 0.19s, transform 0.08s;
-      border: none;
-      cursor: pointer;
-    }
-    .button-link:hover,
-    .button-link:focus {
-      background: #0b3d91;
-      transform: translateY(-2px) scale(1.04);
-      color: #fff;
-    }
-
-    .site-footer {
-      background: #f5f7fb;
-      color: #666;
-      padding: 18px 0;
-      margin-top: 24px;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    /* --- RESPONSIVE --- */
-    @media (max-width:700px) {
-      .site-header h1 { font-size: 1.4em; margin-bottom: 10px; }
-      nav { justify-content: center; width: 100%; gap: 10px; }
-      nav a { background: rgba(255,255,255,0.12); font-size: 0.9em; }
-      .section-index { padding: 20px 8px 10px 8px; }
-      .btn-center { text-align: center; }
-    }
-  </style>
 </head>
-
 <body>
+
+  <!-- HEADER FIXE DYNAMIQUE -->
   <header class="site-header" id="header">
     <div class="container">
       <h1>Analyse de l'État 4001</h1>
@@ -159,61 +29,69 @@
     <h2>Bienvenue</h2>
     <p>Ce site présente une analyse académique de la base de données “État 4001” portant sur les faits de délinquance. Explorez chaque rubrique ci-dessous :</p>
 
+    <!-- Section Histoire -->
     <section class="section-index">
       <h3>Histoire de la base de données</h3>
-      <p>Origines, évolutions et contexte institutionnel...</p>
+      <p>Décrivez ici les origines, les évolutions et les contextes de création de la base État 4001. Exemples : date de création, cadre institutionnel, grands jalons.</p>
       <div class="btn-center">
         <a href="histoire.html" class="button-link">Accéder à la rubrique</a>
       </div>
     </section>
 
+    <!-- Section Construction -->
     <section class="section-index">
       <h3>Construction de la base</h3>
-      <p>Variables, méthodes de collecte, formats et sources...</p>
+      <p>Décrivez la structure de la base : quelles sont les variables, la méthode de collecte, les sources de données, la chaîne de traitement, les formats utilisés, etc.</p>
       <div class="btn-center">
         <a href="construction.html" class="button-link">Accéder à la rubrique</a>
       </div>
     </section>
 
+    <!-- Section Observatoire -->
     <section class="section-index">
       <h3>Observatoire & utilisation</h3>
-      <p>Implication et utilisation par l’Observatoire de la délinquance...</p>
+      <p>Expliquez l’implication de l’Observatoire de la délinquance et de la réponse pénale, la façon dont il utilise l’État 4001, l’intérêt statistique ou scientifique.</p>
       <div class="btn-center">
         <a href="observatoire.html" class="button-link">Accéder à la rubrique</a>
       </div>
     </section>
 
+    <!-- Section Limites -->
     <section class="section-index">
       <h3>État 4001 : un outil limité</h3>
-      <p>Limites connues, biais et couverture des données...</p>
+      <p>Présentez les limites connues de la base (biais, manque ou retard de données, limitations techniques ou de couverture, etc.).</p>
       <div class="btn-center">
         <a href="limites.html" class="button-link">Accéder à la rubrique</a>
       </div>
     </section>
 
+    <!-- Section Dépassé -->
     <section class="section-index">
       <h3>État 4001 : un outil dépassé</h3>
-      <p>Obsolescence, besoins non couverts, absence d’interopérabilité...</p>
+      <p>Argumentez sur l’obsolescence éventuelle de la base : évolutions technologiques manquées, besoins non couverts, absence d’interopérabilité.</p>
       <div class="btn-center">
         <a href="depasse.html" class="button-link">Accéder à la rubrique</a>
       </div>
     </section>
 
+    <!-- Section SSMSI -->
     <section class="section-index">
       <h3>L’État 4001 et le SSMSI</h3>
-      <p>Lien avec le SSMSI, complémentarité et évolution...</p>
+      <p>Décrivez le lien avec le Service Statistique Ministériel de la Sécurité Intérieure (SSMSI), complémentarité, évolution, transformation ou perspective de fusion, etc.</p>
       <div class="btn-center">
         <a href="ssmsi.html" class="button-link">Accéder à la rubrique</a>
       </div>
     </section>
 
+    <!-- Section Table des index -->
     <section class="section-index">
       <h3>Table des indices</h3>
-      <p>Table complète des index et libellés d’infractions utilisés dans “État 4001”.</p>
+      <p>Retrouvez la table complète des index et libellés d'infractions utilisés dans “État 4001”.</p>
       <div class="btn-center">
         <a href="table-index.html" class="button-link">Accéder au tableau</a>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -222,19 +100,7 @@
     </div>
   </footer>
 
-  <script>
-    // --- HEADER DYNAMIQUE AU SCROLL ---
-    let lastScrollTop = 0;
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if(scrollTop > lastScrollTop && scrollTop > 100){
-        header.classList.add('hidden');
-      } else {
-        header.classList.remove('hidden');
-      }
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-  </script>
+  <!-- Script header dynamique -->
+  <script src="header.js"></script>
 </body>
 </html>
