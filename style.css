@@ -5,7 +5,7 @@
   --bg: #ffffff;
   --muted: #666;
   --container-width: 1000px;
-  --header-height: 500px; /* espace entre header et contenu */
+  --header-height: 180px; /* espace entre header et contenu */
 }
 
 /* --- REGLAGES GLOBAUX --- */
