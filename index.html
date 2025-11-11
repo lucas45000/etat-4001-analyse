@@ -7,12 +7,104 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
+    /* --- STYLE BANNIÈRE MODERNE --- */
+    .site-header {
+      background: linear-gradient(100deg, #0b3d91, #1764c6);
+      color: #fff;
+      padding: 20px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .site-header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .site-header h1::before {
+      content: "📊 ";
+      font-size: 1em;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.96em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    nav a:hover,
+    nav a:focus,
+    nav a.active {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-2px);
+    }
+    @media (max-width: 750px) {
+      .site-header h1 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+      }
+      nav {
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+      }
+      nav a {
+        background: rgba(255,255,255,0.12);
+        font-size: 0.9em;
+      }
+    }
+
+    /* --- STYLE DU CORPS --- */
+    body {
+      font-family: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      color: #111;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h2 {
+      color: #1764c6;
+      font-size: 1.6em;
+      margin-bottom: 12px;
+    }
+    p {
+      max-width: 850px;
+    }
+
+    /* --- STYLE DES BLOCS D’ACCUEIL --- */
     .section-index {
       background: #fafdff;
       border-radius: 12px;
       padding: 28px 22px 18px 22px;
       margin: 32px 0 0 0;
       box-shadow: 0 2px 16px #1764c608;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .section-index:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 20px #1764c615;
     }
     .section-index h3 {
       margin-top: 0;
@@ -37,7 +129,8 @@
       border: none;
       cursor: pointer;
     }
-    .button-link:hover, .button-link:focus {
+    .button-link:hover,
+    .button-link:focus {
       background: #0b3d91;
       transform: translateY(-2px) scale(1.04);
       color: #fff;
@@ -50,19 +143,25 @@
         text-align: center;
       }
     }
-    #map {
-      height: 600px;
-      border-radius: 12px;
-      margin-top: 15px;
+
+    /* --- PIED DE PAGE --- */
+    .site-footer {
+      background: #f5f7fb;
+      color: #666;
+      padding: 18px 0;
+      margin-top: 24px;
+      text-align: center;
+      font-size: 14px;
     }
   </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
       <h1>Analyse de l'État 4001</h1>
       <nav>
-        <a href="index.html">Accueil</a>
+        <a href="index.html" class="active">Accueil</a>
         <a href="histoire.html">Histoire</a>
         <a href="construction.html">Construction</a>
         <a href="observatoire.html">Observatoire</a>
@@ -73,6 +172,7 @@
       </nav>
     </div>
   </header>
+
   <main class="container">
     <h2>Bienvenue</h2>
     <p>Ce site présente une analyse académique de la base de données “État 4001” portant sur les faits de délinquance. Explorez chaque rubrique ci-dessous :</p>
@@ -133,11 +233,11 @@
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025 — Projet académique. Équipe de rendu.</p>
     </div>
   </footer>
-
 </body>
 </html>
