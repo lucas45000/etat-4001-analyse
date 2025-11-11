@@ -5,7 +5,7 @@
   --bg: #ffffff;
   --muted: #666;
   --container-width: 1000px;
-  --header-height: 180px; /* espace entre header et contenu */
+  --header-height: 200px; /* espace entre header et contenu augmenté */
 }
 
 /* --- REGLAGES GLOBAUX --- */
@@ -192,7 +192,7 @@ p {
 .menu-bubble {
   position: fixed;
   top: 12px;
-  right: 12px;
+  left: 12px; /* changé pour haut-gauche */
   width: 50px;
   height: 50px;
   background: var(--accent);
@@ -218,8 +218,8 @@ p {
 /* --- CONTENU DU MENU DEROULANT --- */
 .menu-dropdown {
   position: fixed;
-  top: 70px; /* légèrement en dessous du bouton */
-  right: 12px;
+  top: 70px;
+  left: 12px; /* aligné avec la bulle */
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -241,7 +241,6 @@ p {
   background: #f0f4ff;
 }
 
-/* affiche le menu quand actif */
 .menu-dropdown.show {
   display: flex;
 }
