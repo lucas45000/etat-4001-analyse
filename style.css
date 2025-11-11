@@ -19,11 +19,10 @@ body {
   color: #111;
   background: var(--bg);
   line-height: 1.6;
-  padding-top: var(--header-height); /* espace sous le header */
+  padding-top: var(--header-height);
   scroll-behavior: smooth;
 }
 
-/* --- CONTAINER CENTRAL --- */
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
@@ -192,7 +191,7 @@ p {
 .menu-bubble {
   position: fixed;
   top: 12px;
-  left: 12px; /* changé pour haut-gauche */
+  left: 12px;
   width: 50px;
   height: 50px;
   background: var(--accent);
@@ -219,7 +218,7 @@ p {
 .menu-dropdown {
   position: fixed;
   top: 70px;
-  left: 12px; /* aligné avec la bulle */
+  left: 12px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
