@@ -184,6 +184,32 @@ p {
   color: #fff;
 }
 
+/* Boutons de rubriques */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.rubrique-btn {
+  display: block;
+  text-align: center;
+  background-color: #1d3557;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.rubrique-btn:hover {
+  background-color: #457b9d;
+  transform: scale(1.05);
+}
+
+
 /* --- FOOTER --- */
 .site-footer {
   background: #f5f7fb;
