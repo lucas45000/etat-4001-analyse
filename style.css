@@ -209,6 +209,40 @@ p {
   transform: scale(1.05);
 }
 
+.rubrique-section {
+  background-color: #f7f9fb;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #1d3557;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.rubrique-section h3 {
+  margin-top: 0;
+  color: #1d3557;
+}
+
+.rubrique-section p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.rubrique-btn {
+  display: inline-block;
+  background-color: #1d3557;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.rubrique-btn:hover {
+  background-color: #457b9d;
+  transform: scale(1.05);
+}
 
 /* --- FOOTER --- */
 .site-footer {
