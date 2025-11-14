@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
+
+  <!-- HEADER FIXE DYNAMIQUE -->
+  <header class="site-header" id="header">
     <div class="container">
       <h1>Analyse de l'État 4001</h1>
       <nav>
@@ -17,19 +19,121 @@
         <a href="observatoire.html">Observatoire</a>
         <a href="limites.html">Outil limité</a>
         <a href="depasse.html">Outil dépassé</a>
-        <a href="ssmsi.html">SSMSI</a>
+        <a href="ssmsi.html" class="active">SSMSI</a>
         <a href="table-index.html">Table des index</a>
       </nav>
     </div>
   </header>
+
+  <!-- BOUTON MENU FLOTTANT -->
+  <div class="menu-bubble" id="menuBubble">☰</div>
+
+  <!-- MENU DÉROULANT -->
+  <div class="menu-dropdown" id="menuDropdown">
+    <a href="index.html">Accueil</a>
+    <a href="histoire.html">Histoire</a>
+    <a href="construction.html">Construction</a>
+    <a href="observatoire.html">Observatoire</a>
+    <a href="limites.html">Outil limité</a>
+    <a href="depasse.html">Outil dépassé</a>
+    <a href="ssmsi.html">SSMSI</a>
+    <a href="table-index.html">Table des index</a>
+  </div>
+
   <main class="container">
-    <h2>L’État 4001 et le SSMSI</h2>
-    <p>Décris ici la relation entre État 4001 et le Service Statistique Ministériel de la Sécurité Intérieure (SSMSI).</p>
+
+    <section class="content-block">
+      <h2>🏢 Le SSMSI — Rôle, modernisation et mesure de la délinquance</h2>
+      <p>
+        Face aux limites de l’ancien système et aux critiques récurrentes sur l’<strong>opacité</strong> ou la <strong>politisation</strong> des chiffres de la délinquance, 
+        le ministère de l’Intérieur a créé en 2014 un <strong>Service statistique ministériel dédié : le SSMSI</strong>. 
+        Comme tous les services statistiques ministériels, il est soumis au <strong>principe d’indépendance professionnelle</strong> et aux standards de la statistique publique.
+      </p>
+
+      <blockquote class="note">
+        Mission centrale : <strong>collecter, contrôler, traiter et diffuser</strong> les données de délinquance enregistrées par la police et la gendarmerie.
+      </blockquote>
+    </section>
+
+    <section class="content-block">
+      <h3>🔍 Collecte des données et champ couvert</h3>
+      <p>
+        Le SSMSI rassemble l’ensemble des données judiciaires issues de l’activité des forces de sécurité (plaintes, signalements, flagrants délits, etc.).
+        Ces statistiques sont utilisées pour éclairer les politiques de sécurité et informer le public.
+      </p>
+
+      <div class="info">
+        Objectif constant : <strong>fiabilité, transparence et indépendance statistique</strong>.
+      </div>
+    </section>
+
+    <section class="content-block">
+      <h3>⚙️ Une modernisation en profondeur du dispositif hérité de l'État 4001</h3>
+      <p>
+        Depuis 2016, la statistique policière ne repose plus seulement sur des tableaux mensuels agrégés : chaque fait est enregistré à un niveau individuel,
+        avec des informations détaillées sur :
+      </p>
+      <ul>
+        <li>la nature de l’infraction (codes Natinf),</li>
+        <li>la localisation et la date,</li>
+        <li>le profil de la victime déclarée,</li>
+        <li>le mis en cause correspondant.</li>
+      </ul>
+
+      <p>
+        Ce saut qualitatif offre une richesse d’analyse inédite, mais introduit des défis de <strong>normalisation et d’harmonisation des systèmes d’information</strong>.
+        Le SSMSI assure ainsi un <strong>nettoyage approfondi</strong> des données, élimine les doublons, gère les évolutions de catégorisation et établit des indicateurs communs
+        pour rendre les statistiques comparables dans le temps et sur le territoire.
+      </p>
+
+      <div class="warning">
+        🌍 Alignement en cours avec la <strong>classification internationale ICCS de l’ONU</strong> pour permettre des comparaisons internationales.
+      </div>
+    </section>
+
+    <section class="content-block">
+      <h3>📌 Des évolutions institutionnelles majeures</h3>
+      <p>
+        L’audit interministériel de 2019 puis un décret de janvier 2020 ont consolidé l’indépendance du SSMSI en le rattachant à l’Insee pour la coordination statistique.
+        La dissolution de l’<strong>ONDRP</strong> fin 2020 a transféré l’ensemble de ses missions au SSMSI.
+      </p>
+
+      <div class="info">
+        Depuis 2021, le SSMSI produit non seulement les chiffres de la délinquance enregistrée, mais pilote aussi les <strong>enquêtes de victimation</strong> 
+        et des études portant sur toute la chaîne pénale.
+      </div>
+
+      <p>
+        Le service publie régulièrement des <strong>Notes Interstats</strong> mensuelles, ainsi que des analyses thématiques approfondies permettant 
+        une lecture plus fine des tendances de la criminalité et des réponses pénales.
+      </p>
+    </section>
+
+    <section class="content-block">
+      <h3>🎯 Un objectif final : objectiver le débat public sur la sécurité</h3>
+      <p>
+        L'ambition du SSMSI est de dépasser la <em>tentation du chiffre unique</em> et les usages politiques simplistes des données.
+        En croisant <strong>données administratives police/gendarmerie</strong> et <strong>enquêtes de victimation auprès de la population</strong>,
+        la mesure de la délinquance gagne en fiabilité et en finesse d’analyse.
+      </p>
+
+      <blockquote class="note">
+        Le SSMSI constitue aujourd'hui <strong>l’autorité nationale de référence pour les statistiques de sécurité intérieure</strong>.
+      </blockquote>
+
+      <div class="image-block">
+        <img src="images/ssmsi.jpg" alt="SSMSI - Service statistique ministériel de la sécurité intérieure" loading="lazy">
+      </div>
+    </section>
+
   </main>
+
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025 — Projet académique. Équipe de rendu.</p>
     </div>
   </footer>
+
+  <script src="header.js"></script>
 </body>
 </html>
