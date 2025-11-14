@@ -399,3 +399,25 @@ p {
   margin-top: 6px;
   opacity: 0.8;
 }
+.next-page {
+  text-align: center;
+  margin: 50px 0 10px;
+}
+
+.next-button {
+  background: var(--accent-color, #2a6df4);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.next-button:hover {
+  background: var(--accent-hover, #1e50b8);
+  transform: translateY(-2px);
+}
+
