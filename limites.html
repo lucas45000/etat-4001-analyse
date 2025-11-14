@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
+
+  <!-- HEADER FIXE DYNAMIQUE -->
+  <header class="site-header" id="header">
     <div class="container">
       <h1>Analyse de l'État 4001</h1>
       <nav>
@@ -15,21 +17,100 @@
         <a href="histoire.html">Histoire</a>
         <a href="construction.html">Construction</a>
         <a href="observatoire.html">Observatoire</a>
-        <a href="limites.html">Outil limité</a>
+        <a href="limites.html" class="active">Outil limité</a>
         <a href="depasse.html">Outil dépassé</a>
         <a href="ssmsi.html">SSMSI</a>
         <a href="table-index.html">Table des index</a>
       </nav>
     </div>
   </header>
+
+  <!-- BOUTON MENU FLOTTANT -->
+  <div class="menu-bubble" id="menuBubble">☰</div>
+
+  <!-- MENU DÉROULANT -->
+  <div class="menu-dropdown" id="menuDropdown">
+    <a href="index.html">Accueil</a>
+    <a href="histoire.html">Histoire</a>
+    <a href="construction.html">Construction</a>
+    <a href="observatoire.html">Observatoire</a>
+    <a href="limites.html">Outil limité</a>
+    <a href="depasse.html">Outil dépassé</a>
+    <a href="ssmsi.html">SSMSI</a>
+    <a href="table-index.html">Table des index</a>
+  </div>
+
   <main class="container">
-    <h2>État 4001 : un outil limité</h2>
-    <p>Présente ici les limites de l’outil : biais, variables manquantes, délais, couverture limitée, etc. Illustre par des exemples.</p>
+
+    <section class="content-block">
+      <h2>📌 État 4001 : un outil limité</h2>
+      <p>
+        L'État 4001 constitue pendant des décennies la principale source statistique sur la délinquance enregistrée, mais il souffre de nombreuses limites structurelles. 
+        Bien qu’il fournisse des données indispensables au suivi de l’activité policière, il impose une vision partielle et imparfaite de la réalité criminelle.
+      </p>
+      <blockquote class="note">
+        Ses données ne représentent que les faits <strong>enregistrés</strong>, non les faits <strong>subis par la population</strong>.
+      </blockquote>
+    </section>
+
+    <section class="content-block">
+      <h3>🔍 Des biais méthodologiques persistants</h3>
+      <ul>
+        <li>Les statistiques reflètent d’abord <strong>le comportement de dépôt de plainte</strong>, pas le niveau réel de criminalité.</li>
+        <li>Les politiques locales (ex. plaintes par Internet, campagnes de prévention) modifient artificiellement les volumes enregistrés.</li>
+        <li>Les variations d'indicateurs peuvent traduire des <strong>changements de pratiques policières</strong> plutôt qu’une évolution réelle des faits.</li>
+      </ul>
+      <div class="warning">
+        Une hausse statistique peut aussi signifier <strong>une meilleure prise en charge des victimes</strong>, et non une hausse de la violence.
+      </div>
+    </section>
+
+    <section class="content-block">
+      <h3>⏳ Des informations parfois incomplètes ou tardives</h3>
+      <p>
+        L'État 4001 est basé sur des tableaux agrégés transmis par les services. Les variables sont limités et l’enregistrement des données peut être tardif ou hétérogène.
+      </p>
+      <ul>
+        <li>Peu d’informations sur les victimes avec parfois des catégories très générales.</li>
+        <li>Pas de suivi individuel des mis en cause.</li>
+        <li>Peu de données qualitatives permettant d’analyser le contexte de l’infraction.</li>
+      </ul>
+      <div class="info">
+        Ce format limite fortement la capacité à <strong>comprendre les dynamiques criminelles</strong>.
+      </div>
+    </section>
+
+    <section class="content-block">
+      <h3>📉 Une couverture limitée du champ criminel</h3>
+      <p>
+        La majorité des infractions ne sont jamais enregistrées car elles ne font l’objet d’aucune plainte. 
+        L’État 4001 ne couvre donc qu’une fraction des faits réellement survenus.
+      </p>
+      <blockquote class="note">
+        Selon les enquêtes de victimation, seules <strong>20 à 30 % des violences</strong> font l’objet d’un dépôt de plainte.
+      </blockquote>
+    </section>
+
+    <section class="content-block">
+      <h3>🎯 Conséquence : un outil indispensable, mais insuffisant</h3>
+      <p>
+        L'État 4001 éclaire l’activité policière, mais ne permet pas d’évaluer seul l’évolution réelle de la délinquance.
+        C’est une source utile pour l’analyse de la sécurité, mais elle doit impérativement être croisée avec d’autres données
+        — en particulier les enquêtes de victimation auprès de la population.
+      </p>
+      <blockquote class="note">
+        Sans autres sources, l’État 4001 <strong>risque d’alimenter des interprétations politiques biaisées</strong>.
+      </blockquote>
+    </section>
+
   </main>
+
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025 — Projet académique. Équipe de rendu.</p>
     </div>
   </footer>
+
+  <script src="header.js"></script>
 </body>
 </html>
