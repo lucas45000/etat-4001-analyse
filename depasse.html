@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
+
+  <!-- HEADER FIXE DYNAMIQUE -->
+  <header class="site-header" id="header">
     <div class="container">
       <h1>Analyse de l'État 4001</h1>
       <nav>
@@ -16,20 +18,110 @@
         <a href="construction.html">Construction</a>
         <a href="observatoire.html">Observatoire</a>
         <a href="limites.html">Outil limité</a>
-        <a href="depasse.html">Outil dépassé</a>
+        <a href="depasse.html" class="active">Outil dépassé</a>
         <a href="ssmsi.html">SSMSI</a>
         <a href="table-index.html">Table des index</a>
       </nav>
     </div>
+
+    <!-- BOUTON MENU FLOTTANT -->
+    <div class="menu-bubble" id="menuBubble">☰</div>
+
+    <!-- MENU DÉROULANT -->
+    <div class="menu-dropdown" id="menuDropdown">
+      <a href="index.html">Accueil</a>
+      <a href="histoire.html">Histoire</a>
+      <a href="construction.html">Construction</a>
+      <a href="observatoire.html">Observatoire</a>
+      <a href="limites.html">Outil limité</a>
+      <a href="depasse.html">Outil dépassé</a>
+      <a href="ssmsi.html">SSMSI</a>
+      <a href="table-index.html">Table des index</a>
+    </div>
   </header>
+
   <main class="container">
-    <h2>État 4001 : un outil dépassé</h2>
-    <p>Argumente ici les points où l’État 4001 est dépassé (technologies, interopérabilité...). Propose des améliorations et alternatives.</p>
+    <h2>🕳️ Un outil dépassé et complété</h2>
+
+    <section class="content-block">
+
+      <p>
+        L'État 4001, longtemps utilisé comme référence unique pour mesurer la délinquance enregistrée par les forces de sécurité, montre aujourd’hui ses limites : il repose exclusivement sur les <strong>faits signalés par dépôt de plainte ou intervention policière</strong>. Cela crée un décalage majeur entre la réalité criminelle et ce qui est statistiquement visible.
+      </p>
+
+      <div class="warning">
+        ⚠️ Une grande partie des infractions ne sont <strong>jamais déclarées</strong> aux forces de l’ordre : l’État 4001 ne les mesure donc pas.
+      </div>
+
+      <h3>📊 Les enquêtes de victimation : un complément indispensable</h3>
+      <p>
+        Pour pallier ces faiblesses de la statistique administrative et mieux appréhender l’ampleur réelle de la criminalité, d’autres outils ont été développés.
+        Au premier rang figurent les <strong>enquêtes de victimation</strong>, mises en œuvre en France depuis les années 1990-2000, en écho aux expériences anglo-saxonnes des années 1970.
+      </p>
+
+      <blockquote class="note">
+        Une enquête de victimation interroge un échantillon de population sur les infractions subies — <strong>qu’il y ait dépôt de plainte ou non</strong>.
+      </blockquote>
+
+      <p>
+        Grâce au recueil direct auprès des victimes, ces enquêtes révèlent les faits non signalés aux autorités et apportent leur point de vue, ce que l'État 4001 ne permet pas. Par exemple :
+      </p>
+
+      <div class="info">
+        🔹 Seulement <strong>1 victime sur 10</strong> porte plainte en cas de violences physiques ou sexuelles au sein du ménage.<br>
+        🔹 <strong>9 victimes sur 10</strong> portent plainte en cas de vol de voiture abouti.
+      </div>
+
+      <p>
+        L’écart spectaculaire entre infractions déclarées et infractions subies montre que l'État 4001 sous-estime certaines formes de délinquance — notamment les <strong>violences intrafamiliales</strong>.
+      </p>
+
+      <h3>🔍 Les grandes enquêtes nationales</h3>
+      <p>
+        Les enquêtes de victimation ont fourni des indicateurs essentiels sur la criminalité réelle. La plus structurante a longtemps été l’enquête
+        <strong>Cadre de vie et sécurité (CVS)</strong>, réalisée par l’Insee en partenariat avec l’ONDRP de 2007 à 2019.
+        Elle mesurait notamment :
+      </p>
+
+      <ul>
+        <li>le nombre de victimes déclarées (cambriolages, vols, violences…) ;</li>
+        <li>le taux de dépôt de plainte selon le type d’infraction ;</li>
+        <li>le sentiment d’insécurité ;</li>
+        <li>la vulnérabilité des différentes catégories de population et territoires.</li>
+      </ul>
+
+      <p>
+        Depuis la disparition de l’ONDRP en 2020, le ministère de l’Intérieur a renouvelé ce dispositif.
+      </p>
+
+      <div class="image-block">
+        <img src="images/statistiques.jpg" alt="Complémentarité entre enquêtes et données administratives" loading="lazy">
+      </div>
+
+      <h3>🆕 Une nouvelle génération d’enquêtes</h3>
+      <p>
+        Le SSMSI a lancé en 2021 la nouvelle enquête nationale
+        <strong>Vécu et ressenti en matière de sécurité (VRS)</strong>.
+        Elle repose sur un très vaste échantillon (200 000 personnes) et une collecte multimode, en remplacement de la CVS.
+      </p>
+
+      <p>
+        D’autres enquêtes spécialisées complètent le dispositif, comme l’enquête <strong>GENESE</strong> menée en 2021 sur les violences liées au genre.
+      </p>
+
+      <div class="info">
+        ➜ La combinaison des enquêtes de victimation et des données issues de l'État 4001 constitue aujourd’hui le <strong>seul moyen d’appréhender la criminalité dans toute son ampleur</strong> et de combler les angles morts des statistiques administratives.
+      </div>
+
+    </section>
   </main>
+
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025 — Projet académique. Équipe de rendu.</p>
     </div>
   </footer>
+
+  <script src="header.js"></script>
 </body>
 </html>
